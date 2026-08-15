@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ehramica Cabasag — Customer Experience & Escalation Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12213D;
+    --ink-soft:#3A4A6B;
+    --paper:#EEF1F5;
+    --paper-card:#FFFFFF;
+    --line:#D6DCE6;
+    --gold:#C98A2C;
+    --gold-soft:#F3E3C6;
+    --teal:#2E7D6B;
+    --teal-soft:#DCEEE9;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Source Serif 4', serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.6;
+  }
+
+  a{color:inherit;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* NAV */
+  nav.topbar{
+    position:sticky;top:0;z-index:20;
+    background:rgba(238,241,245,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.topbar .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .brand{
+    font-family:var(--font-mono);
+    font-size:13px;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+  }
+  .brand strong{color:var(--ink);}
+  .navlinks{display:flex;gap:22px;font-family:var(--font-mono);font-size:12.5px;text-transform:uppercase;letter-spacing:0.05em;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;padding-bottom:3px;transition:border-color .15s, color .15s;}
+  .navlinks a:hover{color:var(--ink);border-color:var(--gold);}
+  .navlinks a:focus-visible, a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+  /* HERO */
+  header.hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:64px 0 56px;
+  }
+  .hero-top{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+  }
+  .avatar{
+    width:148px;height:148px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--gold);
+    box-shadow:0 0 0 6px rgba(201,138,44,0.15);
+    flex-shrink:0;
+  }
+  .hero-text{flex:1;min-width:240px;}
+  .ticket-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.22);
+    color:#EAD9B4;
+    padding:6px 12px;
+    border-radius:3px;
+  }
+  .ticket-badge .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 0 3px rgba(201,138,44,0.25);
+  }
+  header.hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(34px,5.5vw,54px);
+    font-weight:700;
+    margin:22px 0 6px;
+    letter-spacing:-0.01em;
+  }
+  header.hero .role{
+    font-family:var(--font-display);
+    font-size:clamp(16px,2.4vw,20px);
+    color:#C7D0E0;
+    font-weight:500;
+    margin:0 0 20px;
+  }
+  header.hero .pitch{
+    max-width:560px;
+    font-size:16.5px;
+    color:#DCE2ED;
+    margin:0 0 30px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{
+    font-family:var(--font-mono);
+    font-size:13px;
+    letter-spacing:0.03em;
+    padding:11px 18px;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-block;
+    border:1px solid transparent;
+    transition:transform .12s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--gold);color:#241804;}
+  .btn-primary:hover{background:#DDA042;}
+  .btn-secondary{background:transparent;color:var(--paper);border-color:rgba(255,255,255,0.35);}
+  .btn-secondary:hover{border-color:var(--gold);color:var(--gold-soft);}
+
+  /* SECTION LABEL */
+  .section-label{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:14px;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  section{padding:52px 0;}
+  section#track{padding-top:0;margin-top:-30px;}
+
+  /* SCORECARD */
+  .scorecard{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+  }
+  .stat{
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 16px;
+    box-shadow:0 10px 26px -18px rgba(18,33,61,0.35);
+  }
+  .stat .num{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:26px;
+    color:var(--ink);
+  }
+  .stat .lbl{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:6px;
+    line-height:1.4;
+  }
+
+  h2.h{
+    font-family:var(--font-display);
+    font-size:26px;
+    font-weight:700;
+    margin:0 0 16px;
+    color:var(--ink);
+  }
+
+  p.lead{font-size:17px;color:var(--ink-soft);}
+
+  /* TIMELINE */
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .entry{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .entry:last-child{border-bottom:none;}
+  .entry-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:8px;
+  }
+  .entry-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:17.5px;
+    color:var(--ink);
+  }
+  .entry-date{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.03em;
+  }
+  .entry-org{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--teal);
+    margin:4px 0 10px;
+    letter-spacing:0.02em;
+  }
+  .entry ul{margin:0;padding-left:20px;color:var(--ink-soft);font-size:15px;}
+  .entry li{margin-bottom:6px;}
+
+  /* SKILLS */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:8px 16px;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+
+  .twocol{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;}
+  .card{
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 20px;
+    margin-bottom:12px;
+  }
+  .card h3{margin:0 0 4px;font-family:var(--font-display);font-size:15.5px;}
+  .card .meta{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);}
+
+  .hobby-row{display:flex;flex-direction:column;gap:10px;}
+  .hobby{
+    background:var(--teal-soft);
+    color:#1E4F42;
+    border-radius:6px;
+    padding:10px 14px;
+    font-family:var(--font-mono);
+    font-size:13px;
+  }
+
+  /* FOOTER */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:60px 0 40px;
+  }
+  footer .status{
+    display:flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;
+    color:#8FE3B8;text-transform:uppercase;margin-bottom:14px;
+  }
+  footer .status .dot{width:7px;height:7px;border-radius:50%;background:#5FCB9F;}
+  footer h2{
+    font-family:var(--font-display);
+    font-size:clamp(24px,4vw,32px);
+    margin:0 0 18px;
+  }
+  .contact-row{display:flex;flex-wrap:wrap;gap:28px;margin-top:8px;}
+  .contact-item{display:flex;flex-direction:column;gap:4px;}
+  .contact-item .k{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;color:#9AA8C4;text-transform:uppercase;}
+  .contact-item a{font-family:var(--font-display);font-size:16px;color:var(--paper);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);}
+  .contact-item a:hover{border-color:var(--gold);color:var(--gold-soft);}
+  .foot-note{margin-top:36px;font-family:var(--font-mono);font-size:11.5px;color:#7D8AA8;}
+
+  @media (max-width:760px){
+    .scorecard{grid-template-columns:repeat(2,1fr);}
+    .twocol{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    .hero-top{flex-direction:column;align-items:flex-start;gap:18px;}
+    .avatar{width:104px;height:104px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <div class="brand"><strong>EHRAMICA</strong> CABASAG</div>
+    <div class="navlinks">
+      <a href="#track">Track Record</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <img class="avatar" src="profile.png" alt="Ehramica Cabasag">
+      <div class="hero-text">
+        <span class="ticket-badge"><span class="dot"></span>CASE #EMC-2026 · STATUS: OPEN TO WORK</span>
+        <h1>Ehramica Cabasag</h1>
+        <p class="role">Customer Experience &amp; Escalation Management Specialist</p>
+        <p class="pitch">Nearly 5 years turning high-stress escalations into resolved accounts — and coaching whole teams to do the same, with a track record moving from frontline agent to Subject Matter Expert to Escalation Mentor.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn btn-secondary" href="#experience">See my track record</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="track">
+  <div class="wrap">
+    <div class="scorecard" style="margin-top:-34px;">
+      <div class="stat">
+        <div class="num">5</div>
+        <div class="lbl">YEARS · PROGRESSIVE<br>BPO EXPERIENCE</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl">PROMOTIONS · CSR TO<br>ESCALATION MENTOR</div>
+      </div>
+      <div class="stat">
+        <div class="num">SME</div>
+        <div class="lbl">& ESCALATION<br>MENTOR</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="lbl">INDUSTRIES ·<br>TELCO & HEALTHCARE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-label">Summary</div>
+    <p class="lead">Customer service professional with nearly 5 years of progressive BPO experience across telecommunications and healthcare accounts. Advanced from frontline Customer Service Representative to Subject Matter Expert and, most recently, Escalation Mentor — coaching agents, resolving high-priority escalations, and upholding strict SLA and KPI standards. Skilled at de-escalating complex customer issues, developing team capability, and driving measurable improvements in CSAT, FCR, and AHT.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-label">Experience Log</div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Escalation Mentor — Telco Account</div>
+          <div class="entry-date">MAY 2026 – PRESENT</div>
+        </div>
+        <div class="entry-org">AFNI</div>
+        <ul>
+          <li>De-escalate high-stress customer interactions through advanced problem-solving, active listening, and policy expertise.</li>
+          <li>Serve as a senior point of escalation for complex account, billing, and technical issues that require specialized resolution.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Subject Matter Expert — Telco Account</div>
+          <div class="entry-date">NOV 2024 – MAY 2026</div>
+        </div>
+        <div class="entry-org">AFNI</div>
+        <ul>
+          <li>Coached, guided, and upskilled a team of customer service representatives to improve key performance indicators (KPIs) such as CSAT, FCR, and AHT.</li>
+          <li>Conducted regular performance evaluations, side-by-side monitoring, and huddles to address knowledge gaps and process updates.</li>
+          <li>Assisted in the onboarding and nesting phases of new hires to ensure a seamless transition into production.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Customer Service Representative — Telco Account</div>
+          <div class="entry-date">OCT 2023 – OCT 2024</div>
+        </div>
+        <div class="entry-org">AFNI</div>
+        <ul>
+          <li>Handled inbound customer inquiries regarding billing, technical support, and account management for a major telecommunications account.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Customer Service Representative — Telco Account</div>
+          <div class="entry-date">JUL 2022 – SEP 2023</div>
+        </div>
+        <div class="entry-org">TELUS International</div>
+        <ul>
+          <li>Managed customer accounts, resolved complex service and billing issues, and cross-sold relevant products and upgrades.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Customer Service Representative — Healthcare Account</div>
+          <div class="entry-date">SEP 2021 – JUL 2022</div>
+        </div>
+        <div class="entry-org">Teleperformance</div>
+        <ul>
+          <li>Provided compassionate, accurate, and HIPAA-compliant customer support for a healthcare account.</li>
+          <li>Assisted members and providers with benefits verification, claims inquiries, and general healthcare account navigation.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-label">Skills &amp; Competencies</div>
+    <div class="chips">
+      <span class="chip">Team Mentorship</span>
+      <span class="chip">Performance Coaching</span>
+      <span class="chip">Real-Time Floor Support</span>
+      <span class="chip">Agent Nesting &amp; Onboarding</span>
+      <span class="chip">Escalation Management</span>
+      <span class="chip">De-escalation Techniques</span>
+      <span class="chip">Customer Retention</span>
+      <span class="chip">Advanced Problem-Solving</span>
+      <span class="chip">Client Relations</span>
+      <span class="chip">Conflict Resolution</span>
+      <span class="chip">KPI &amp; SLA Management</span>
+      <span class="chip">HIPAA-Compliant Support</span>
+    </div>
+  </div>
+</section>
+
+<section id="more">
+  <div class="wrap">
+    <div class="twocol">
+      <div>
+        <div class="section-label">Education</div>
+        <div class="card">
+          <h3>Bachelor of Science in Marketing Management</h3>
+          <div class="meta">Mary the Queen College of Quezon City · Graduated 2023</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Outside Work</div>
+        <div class="hobby-row">
+          <span class="hobby">🎧 Music &amp; playlists</span>
+          <span class="hobby">📖 Self-improvement reading</span>
+          <span class="hobby">🌿 Downtime with family</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="status"><span class="dot"></span>STATUS: READY FOR NEW ROLE</div>
+    <h2>Let's resolve this — get in touch.</h2>
+    <div class="contact-row">
+      <div class="contact-item">
+        <span class="k">Email</span>
+        <a href="mailto:ehramicacabasag10@gmail.com">ehramicacabasag10@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="k">Phone</span>
+        <a href="tel:+639616119115">0961 611 9115</a>
+      </div>
+      <div class="contact-item">
+        <span class="k">Location</span>
+        <span style="font-family:var(--font-display);font-size:16px;">Quezon City, PH</span>
+      </div>
+    </div>
+    <div class="foot-note">© 2026 Ehramica Cabasag. Case closed only when you're happy with the hire.</div>
+  </div>
+</footer>
+
+</body>
+</html>
