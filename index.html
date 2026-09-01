@@ -236,6 +236,51 @@
     color:var(--ink-soft);
   }
 
+  /* CASE FILE GRID — admin / VA skillset */
+  .file-note{
+    font-size:15px;color:var(--ink-soft);margin:-6px 0 22px;
+  }
+  .filegrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  .filecard{
+    position:relative;
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:18px 20px 18px 24px;
+    box-shadow:0 10px 24px -20px rgba(18,33,61,0.4);
+  }
+  .filecard::before{
+    content:"";
+    position:absolute;left:0;top:14px;bottom:14px;
+    width:4px;border-radius:2px;
+    background:var(--gold);
+  }
+  .filecard .tag{
+    font-family:var(--font-mono);
+    font-size:11px;letter-spacing:0.09em;
+    color:var(--gold);
+    display:block;margin-bottom:7px;
+  }
+  .filecard h3{
+    font-family:var(--font-display);
+    font-size:15.5px;font-weight:700;
+    margin:0 0 8px;color:var(--ink);
+  }
+  .filecard p{margin:0;color:var(--ink-soft);font-size:14px;}
+
+  .subhead{
+    font-family:var(--font-mono);
+    font-size:12px;letter-spacing:0.06em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    margin:26px 0 12px;
+  }
+  .subhead:first-of-type{margin-top:0;}
+
   .twocol{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;}
   .card{
     background:var(--paper-card);
@@ -283,6 +328,7 @@
 
   @media (max-width:760px){
     .scorecard{grid-template-columns:repeat(2,1fr);}
+    .filegrid{grid-template-columns:1fr;}
     .twocol{grid-template-columns:1fr;}
     .navlinks{display:none;}
     .hero-top{flex-direction:column;align-items:flex-start;gap:18px;}
@@ -304,6 +350,7 @@
       <a href="#track">Track Record</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#casefiles">Admin &amp; VA Skills</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -316,8 +363,8 @@
       <div class="hero-text">
         <span class="ticket-badge"><span class="dot"></span>CASE #EMC-2026 · STATUS: OPEN TO REMOTE WORK</span>
         <h1>Ehramica Cabasag</h1>
-        <p class="role">Remote Social Media Marketing &amp; Customer Experience Specialist</p>
-        <p class="pitch">Nearly 5 years turning high-stress escalations into resolved accounts — now bringing that same discipline, fast typing, and client-facing polish to a fully remote role in social media marketing and digital customer engagement. Own equipment, reliable home setup, ready to start.</p>
+        <p class="role">Remote Social Media Marketing &amp; Customer Experience Specialist <span style="color:#8FA0C2;">&middot;</span> Virtual Assistant</p>
+        <p class="pitch">Nearly 5 years turning high-stress escalations into resolved accounts, now backed by a certified Executive Virtual Assistant skillset — inbox, calendar, travel, research, and social media, ready to run your day-to-day so you don't have to. Own equipment, reliable home setup, ready to start.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Get in touch</a>
           <a class="btn btn-secondary" href="#experience">See my track record</a>
@@ -353,7 +400,7 @@
 <section id="about">
   <div class="wrap">
     <div class="section-label">Summary</div>
-    <p class="lead">Customer service professional with nearly 5 years of progressive BPO experience across telecommunications and healthcare accounts. Advanced from frontline Customer Service Representative to Subject Matter Expert and, most recently, Escalation Mentor — coaching agents, resolving high-priority escalations, and upholding strict SLA and KPI standards. Brings strong written communication, client-facing polish, and a fast 65 WPM typing speed. Fully equipped for remote work with a personal computer and reliable home internet, now seeking a fully remote role in social media marketing, digital customer engagement, or online community/brand support.</p>
+    <p class="lead">Customer service professional with nearly 5 years of progressive BPO experience across telecommunications and healthcare accounts. Advanced from frontline Customer Service Representative to Subject Matter Expert and, most recently, Escalation Mentor — coaching agents, resolving high-priority escalations, and upholding strict SLA and KPI standards. Brings strong written communication, client-facing polish, and a fast 65 WPM typing speed. Recently completed month-long Executive Virtual Assistant training covering inbox, calendar, travel, research, household, and social media management, adding administrative and remote-operations capability on top of a proven customer-facing track record. Fully equipped for remote work with a personal computer and reliable home internet, now seeking a fully remote role in social media marketing, digital customer engagement, virtual assistance, or online community/brand support.</p>
   </div>
 </section>
 
@@ -445,6 +492,61 @@
       <span class="chip">Content &amp; Community Support</span>
       <span class="chip">65 WPM Typing Speed</span>
       <span class="chip">Own Equipment · Remote-Ready</span>
+    </div>
+
+    <div class="subhead">Tools &amp; Platforms</div>
+    <div class="chips">
+      <span class="chip">Gmail &amp; Google Calendar</span>
+      <span class="chip">Google Drive</span>
+      <span class="chip">Microsoft Outlook</span>
+      <span class="chip">Airtable</span>
+      <span class="chip">Trello</span>
+      <span class="chip">Canva</span>
+      <span class="chip">Slack · Google Meet · Webex</span>
+    </div>
+  </div>
+</section>
+
+<section id="casefiles">
+  <div class="wrap">
+    <div class="section-label">Case Files: Admin &amp; VA Skillset</div>
+    <p class="file-note">Certified through a 1-month Executive Virtual Assistant training program — ready to take on inbox, calendar, and content workload from day one.</p>
+    <div class="filegrid">
+      <div class="filecard">
+        <span class="tag">FILE EM-01</span>
+        <h3>Email Management</h3>
+        <p>Regular inbox sweeps and pre-drafted replies, keeping every account at inbox zero.</p>
+      </div>
+      <div class="filecard">
+        <span class="tag">FILE CM-02</span>
+        <h3>Calendar Management</h3>
+        <p>Logging meetings, events, flights, and hotels so your day-to-day stays organized and on time.</p>
+      </div>
+      <div class="filecard">
+        <span class="tag">FILE TM-03</span>
+        <h3>Travel Management</h3>
+        <p>Researching and booking flights, hotels, and car rentals, with a full itinerary built around them.</p>
+      </div>
+      <div class="filecard">
+        <span class="tag">FILE RM-04</span>
+        <h3>Research Management</h3>
+        <p>Turning open questions — provider lists, product comparisons, competitor profiles — into clear answers.</p>
+      </div>
+      <div class="filecard">
+        <span class="tag">FILE HM-05</span>
+        <h3>Household Management</h3>
+        <p>Handling bill payments, tracking household finances, and sourcing service providers.</p>
+      </div>
+      <div class="filecard">
+        <span class="tag">FILE SM-06</span>
+        <h3>Social Media Management</h3>
+        <p>Planning content calendars, basic Canva creation and video editing, and quarterly analytics reports.</p>
+      </div>
+      <div class="filecard" style="grid-column:1 / -1;">
+        <span class="tag">FILE OC-07</span>
+        <h3>Online Course Creation</h3>
+        <p>Taking a course from idea, through content build-out, to launch.</p>
+      </div>
     </div>
   </div>
 </section>
