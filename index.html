@@ -8,15 +8,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#12213D;
-    --ink-soft:#3A4A6B;
-    --paper:#EEF1F5;
+    --ink:#2E2233;
+    --ink-soft:#5B4A5D;
+    --paper:#FBF4F3;
     --paper-card:#FFFFFF;
-    --line:#D6DCE6;
-    --gold:#C98A2C;
-    --gold-soft:#F3E3C6;
-    --teal:#2E7D6B;
-    --teal-soft:#DCEEE9;
+    --line:#EBD9DC;
+    --gold:#BE7186;
+    --gold-soft:#F6DEE3;
+    --teal:#9A5FA3;
+    --teal-soft:#F1E6F5;
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Source Serif 4', serif;
     --font-mono: 'IBM Plex Mono', monospace;
@@ -79,10 +79,10 @@
   .avatar-frame::before{
     content:"";
     position:absolute;
-    top:12px;left:12px;
-    width:100%;height:100%;
-    border:1.5px dashed rgba(201,138,44,0.55);
-    border-radius:6px;
+    top:-18px;left:-18px;
+    width:calc(100% + 30px);height:calc(100% + 30px);
+    background:radial-gradient(circle at 30% 30%, var(--gold-soft), transparent 70%);
+    border-radius:48% 52% 55% 45% / 52% 45% 55% 48%;
     z-index:0;
   }
   .avatar{
@@ -90,37 +90,34 @@
     z-index:1;
     display:block;
     width:216px;height:216px;
-    border-radius:6px;
+    border-radius:38% 62% 60% 40% / 46% 40% 60% 54%;
     object-fit:cover;
-    border:8px solid #FAF7F0;
-    box-shadow:0 22px 44px -16px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,0,0,0.06);
-    transform:rotate(-3deg);
+    border:7px solid #FFFDFC;
+    box-shadow:0 22px 44px -16px rgba(46,34,51,0.4), 0 0 0 1px rgba(46,34,51,0.05);
+    transform:rotate(-2deg);
   }
   .avatar-pin{
     position:absolute;
-    top:-11px;left:50%;
-    transform:translateX(-50%) rotate(-3deg);
-    width:22px;height:22px;
-    border-radius:50%;
-    background:var(--gold);
-    border:3px solid var(--ink);
+    top:-8px;right:6px;
     z-index:2;
-    box-shadow:0 3px 6px rgba(0,0,0,0.4);
+    font-size:26px;
+    transform:rotate(12deg);
+    filter:drop-shadow(0 4px 6px rgba(46,34,51,0.25));
   }
   .avatar-tag{
     position:absolute;
-    bottom:-14px;right:-16px;
+    bottom:-6px;right:-20px;
     z-index:2;
     background:var(--gold);
-    color:#241804;
+    color:#FFF7F9;
     font-family:var(--font-mono);
     font-size:11px;
     font-weight:700;
-    letter-spacing:0.05em;
-    padding:5px 10px;
-    border-radius:3px;
-    transform:rotate(4deg);
-    box-shadow:0 8px 16px -8px rgba(0,0,0,0.55);
+    letter-spacing:0.04em;
+    padding:6px 14px;
+    border-radius:999px;
+    transform:rotate(3deg);
+    box-shadow:0 8px 16px -8px rgba(46,34,51,0.5);
   }
   .hero-text{flex:1;min-width:240px;}
   .ticket-badge{
@@ -130,9 +127,9 @@
     letter-spacing:0.06em;
     background:rgba(255,255,255,0.08);
     border:1px solid rgba(255,255,255,0.22);
-    color:#EAD9B4;
-    padding:6px 12px;
-    border-radius:3px;
+    color:#F0CBD5;
+    padding:6px 14px;
+    border-radius:999px;
   }
   .ticket-badge .dot{
     width:7px;height:7px;border-radius:50%;
@@ -149,14 +146,14 @@
   header.hero .role{
     font-family:var(--font-display);
     font-size:clamp(16px,2.4vw,20px);
-    color:#C7D0E0;
+    color:#E3C9D2;
     font-weight:500;
     margin:0 0 20px;
   }
   header.hero .pitch{
     max-width:560px;
     font-size:16.5px;
-    color:#DCE2ED;
+    color:#EAD9DE;
     margin:0 0 30px;
   }
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
@@ -164,8 +161,8 @@
     font-family:var(--font-mono);
     font-size:13px;
     letter-spacing:0.03em;
-    padding:11px 18px;
-    border-radius:3px;
+    padding:11px 20px;
+    border-radius:999px;
     text-decoration:none;
     display:inline-block;
     border:1px solid transparent;
@@ -270,13 +267,13 @@
   /* SKILLS */
   .chips{display:flex;flex-wrap:wrap;gap:10px;}
   .chip{
-    background:var(--paper-card);
-    border:1px solid var(--line);
-    border-radius:20px;
+    background:var(--teal-soft);
+    border:1px solid #E4D2EA;
+    border-radius:999px;
     padding:8px 16px;
     font-family:var(--font-mono);
     font-size:12.5px;
-    color:var(--ink-soft);
+    color:#6B3F74;
   }
 
   /* CASE FILE GRID — admin / VA skillset */
@@ -292,9 +289,9 @@
     position:relative;
     background:var(--paper-card);
     border:1px solid var(--line);
-    border-radius:4px;
+    border-radius:14px;
     padding:18px 20px 18px 24px;
-    box-shadow:0 10px 24px -20px rgba(18,33,61,0.4);
+    box-shadow:0 10px 24px -20px rgba(46,34,51,0.35);
   }
   .filecard::before{
     content:"";
@@ -328,7 +325,7 @@
   .card{
     background:var(--paper-card);
     border:1px solid var(--line);
-    border-radius:6px;
+    border-radius:14px;
     padding:18px 20px;
     margin-bottom:12px;
   }
@@ -338,8 +335,8 @@
   .hobby-row{display:flex;flex-direction:column;gap:10px;}
   .hobby{
     background:var(--teal-soft);
-    color:#1E4F42;
-    border-radius:6px;
+    color:#6B3F74;
+    border-radius:12px;
     padding:10px 14px;
     font-family:var(--font-mono);
     font-size:13px;
@@ -354,9 +351,9 @@
   footer .status{
     display:flex;align-items:center;gap:8px;
     font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;
-    color:#8FE3B8;text-transform:uppercase;margin-bottom:14px;
+    color:#F0B8CB;text-transform:uppercase;margin-bottom:14px;
   }
-  footer .status .dot{width:7px;height:7px;border-radius:50%;background:#5FCB9F;}
+  footer .status .dot{width:7px;height:7px;border-radius:50%;background:#E8879B;}
   footer h2{
     font-family:var(--font-display);
     font-size:clamp(24px,4vw,32px);
@@ -364,10 +361,10 @@
   }
   .contact-row{display:flex;flex-wrap:wrap;gap:28px;margin-top:8px;}
   .contact-item{display:flex;flex-direction:column;gap:4px;}
-  .contact-item .k{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;color:#9AA8C4;text-transform:uppercase;}
+  .contact-item .k{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;color:#C9A3B0;text-transform:uppercase;}
   .contact-item a{font-family:var(--font-display);font-size:16px;color:var(--paper);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);}
   .contact-item a:hover{border-color:var(--gold);color:var(--gold-soft);}
-  .foot-note{margin-top:36px;font-family:var(--font-mono);font-size:11.5px;color:#7D8AA8;}
+  .foot-note{margin-top:36px;font-family:var(--font-mono);font-size:11.5px;color:#9C7E8C;}
 
   @media (max-width:760px){
     .scorecard{grid-template-columns:repeat(2,1fr);}
@@ -376,9 +373,9 @@
     .navlinks{display:none;}
     .hero-top{flex-direction:column;align-items:flex-start;gap:18px;}
     .avatar-frame{width:150px;}
-    .avatar{width:150px;height:150px;border-width:6px;}
-    .avatar-pin{width:16px;height:16px;}
-    .avatar-tag{font-size:10px;padding:4px 8px;}
+    .avatar{width:150px;height:150px;border-width:5px;}
+    .avatar-pin{font-size:20px;}
+    .avatar-tag{font-size:10px;padding:5px 11px;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -406,14 +403,14 @@
   <div class="wrap">
     <div class="hero-top">
       <div class="avatar-frame">
-        <div class="avatar-pin"></div>
+        <span class="avatar-pin">🌸</span>
         <img class="avatar" src="profile.png" alt="Ehramica Cabasag">
-        <span class="avatar-tag">EXHIBIT EMC-01</span>
+        <span class="avatar-tag">EMC · 2026</span>
       </div>
       <div class="hero-text">
         <span class="ticket-badge"><span class="dot"></span>CASE #EMC-2026 · STATUS: OPEN TO REMOTE WORK</span>
         <h1>Ehramica Cabasag</h1>
-        <p class="role">Remote Social Media Marketing &amp; Customer Experience Specialist <span style="color:#8FA0C2;">&middot;</span> Virtual Assistant</p>
+        <p class="role">Remote Social Media Marketing &amp; Customer Experience Specialist <span style="color:#C9A3B0;">&middot;</span> Virtual Assistant</p>
         <p class="pitch">Nearly 5 years turning high-stress escalations into resolved accounts, now backed by a certified Executive Virtual Assistant skillset — inbox, calendar, travel, research, and social media, ready to run your day-to-day so you don't have to. Own equipment, reliable home setup, ready to start.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Get in touch</a>
